@@ -1,29 +1,24 @@
-*******HAVICKLISTED*******
+# README
 
-This app is a part of the #14in14.  A challenge to build 14 Ruby on Rails apps in 14 days.  After the challenge, there will be a #14in14revamped in which all apps will gain added functionality, and those that are worthy will be deployed.  This Readme will be updated as the app progresses.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-*******Users*******
+Things you may want to cover:
 
-[] Will have a name
+* Ruby version
 
-[] Will have a password
+* System dependencies
 
-[] Will have an email
+* Configuration
 
-[] Will have a session unique to them
+* Database creation
 
-*******Forum*******
+* Database initialization
 
-[]  Users will be able to make posts
+* How to run the test suite
 
-[]  Users will be able to edit posts
+* Services (job queues, cache servers, search engines, etc.)
 
-[]  Users can comment other posts
+* Deployment instructions
 
-[]  Users can edit and delete comments
-
-[]  Users CANNOT edit or delete someone else's comment
-
-[]  Users CANNOT edit or delete someone else's forum post
-
-*************************
+* ...
