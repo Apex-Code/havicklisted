@@ -14,10 +14,14 @@ class MessagesController < ApplicationController
   	  	redirect_to root_path
   	  else
   	  	render 'new'
-  	  end
-
+    end
   end
 
+  def show
+    @message = Message.find(params[:id])
+  end 
+
+  
   private
 
   def message_params 
