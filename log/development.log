@@ -635,3 +635,87 @@ Processing by MessagesController#show as HTML
 Completed 200 OK in 143ms (Views: 138.8ms | ActiveRecord: 0.4ms)
 
 
+Started DELETE "/messages/1" for 127.0.0.1 at 2017-07-24 22:08:37 -0500
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b58kr9FfD+PT+aGuPYeBo8ttvUYIVPJqXbcI5rR9AwDslat04uyx4vpcA75lqeCETaGIihrah2q8CWA2FFeBcg==", "id"=>"1"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 1]]
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 87.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:08:38 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 159ms (Views: 154.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2017-07-24 22:08:40 -0500
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (15.5ms)
+  Rendered messages/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 129ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2017-07-24 22:08:50 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LnbTHcHb4XhOPEYE9L9oG9tGAZ+vFKyx+6axFjuSFLcEx+KXxl7BrQq9Q4tA0JQYZR84t+AHOmcpWR817++TIg==", "message"=>{"title"=>"Looking to sell soul...", "description"=>""}, "commit"=>"Create Message"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "messages" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Looking to sell soul..."], ["description", ""], ["created_at", "2017-07-25 03:08:50.276440"], ["updated_at", "2017-07-25 03:08:50.276440"]]
+  [1m[35m (292.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 307ms (ActiveRecord: 297.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:08:50 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 110ms (Views: 107.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/messages/3" for 127.0.0.1 at 2017-07-24 22:08:52 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 113ms (Views: 106.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/3/edit" for 127.0.0.1 at 2017-07-24 22:08:54 -0500
+Processing by MessagesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering messages/edit.html.erb within layouts/application
+  Rendered messages/_form.html.erb (10.1ms)
+  Rendered messages/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 138ms (Views: 131.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/messages/3" for 127.0.0.1 at 2017-07-24 22:09:05 -0500
+Processing by MessagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cx9c1iipzwKigjT1Wv+UZUmLPhN1CPRAF/LsTyZEedhdaYnNQePG/9E/SVi+PwxOup+CoW8OEMyCoMbl9Q/8xA==", "message"=>{"title"=>"Looking to sell soul...", "description"=>"I just want to get paid"}, "commit"=>"Update Message", "id"=>"3"}
+  [1m[36mMessage Load (8.8ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "messages" SET "description" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["description", "I just want to get paid"], ["updated_at", "2017-07-25 03:09:05.795589"], ["id", 3]]
+  [1m[35m (227.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/messages/3
+Completed 302 Found in 257ms (ActiveRecord: 242.5ms)
+
+
+Started GET "/messages/3" for 127.0.0.1 at 2017-07-24 22:09:06 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 143ms (Views: 138.5ms | ActiveRecord: 0.3ms)
+
+
