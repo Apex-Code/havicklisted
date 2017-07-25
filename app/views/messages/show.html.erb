@@ -7,18 +7,20 @@
 		<h3 class="comment-section-header">Comments:</h3>
 		
 		<p><%= render @message.comments %></p>
-
-		<h3 class="reply-to-msg">Reply to Message:</h3>
+<% if user_signed_in? %>
+		<h3 class="reply-to-msg">Leave a Comment:</h3>
 		
 		<%= render 'comments/form' %>
-
+<% end %>
 
 		
 		<div class="links btn-group">
 			<%= link_to "Back", root_path, class: "btn btn-default" %>
+			<% if user_signed_in? %>
 			<% if @message.user_id == current_user.id %>
 				<%= link_to "Edit", edit_message_path(@message), class: "btn btn-default" %>
 				<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+			<% end %>
 			<% end %>
 		</div>
 	</div>
