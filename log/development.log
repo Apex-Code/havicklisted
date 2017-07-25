@@ -359,3 +359,62 @@ Processing by MessagesController#show as HTML
 Completed 200 OK in 137ms (Views: 103.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-24 21:48:37 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (597.4ms)
+Completed 500 Internal Server Error in 610ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `message' for #<#<Class:0x007f1fb829ae80>:0x007f1fb82991e8>
+Did you mean?  message_url
+               @messages):
+    1: <% @messages.each do |msg| %>
+    2: 
+    3: <h2><%= msg.title %></h2>
+    4: <%= link_to 'View Message', message_path(message), class:"btn btn-default" %> 
+    5: <% end %>
+    6: 
+    7: <%= link_to 'New Message', new_message_path %>
+  
+app/views/messages/index.html.erb:4:in `block in _app_views_messages_index_html_erb___2713548706079017965_69887105227660'
+app/views/messages/index.html.erb:1:in `_app_views_messages_index_html_erb___2713548706079017965_69887105227660'
+Started GET "/" for 127.0.0.1 at 2017-07-24 21:49:01 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (303.9ms)
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `msg_path' for #<#<Class:0x007f1fb829ae80>:0x007f1fa78d4a28>):
+    1: <% @messages.each do |msg| %>
+    2: 
+    3: <h2><%= msg.title %></h2>
+    4: <%= link_to 'View Message', msg_path(msg), class:"btn btn-default" %> 
+    5: <% end %>
+    6: 
+    7: <%= link_to 'New Message', new_message_path %>
+  
+app/views/messages/index.html.erb:4:in `block in _app_views_messages_index_html_erb___2713548706079017965_69886965885780'
+app/views/messages/index.html.erb:1:in `_app_views_messages_index_html_erb___2713548706079017965_69886965885780'
+Started GET "/" for 127.0.0.1 at 2017-07-24 21:49:33 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 125ms (Views: 121.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 21:49:36 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 119ms (Views: 110.5ms | ActiveRecord: 1.3ms)
+
+
