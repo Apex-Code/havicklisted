@@ -3,4 +3,4 @@
 <h2><%= @message.description%></h2>
 
 <!-- add created by and time here! -->
-<h3><%= link_to "Edit", edit_message_path(@message) %></h3>
+<h3><%= link_to "Edit", edit_message_path(@message) %> | <%= link_to "Back", root_path %> | <%= link_to "Delete", message_path(@message), method: :delete, data: {confirm: "You won't come back from this, are you sure?"} %></h3>

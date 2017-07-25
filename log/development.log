@@ -535,3 +535,103 @@ Processing by MessagesController#edit as HTML
 Completed 200 OK in 173ms (Views: 169.7ms | ActiveRecord: 0.3ms)
 
 
+Started PATCH "/messages/2" for 127.0.0.1 at 2017-07-24 22:01:12 -0500
+Processing by MessagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kaERHuIpqRxhTGQIIk/wNfxpDda7PPTULWZSx0Z9kVESq57F0ZoXHUjpxhh6YZESeqU4GqmygdTM2DoX5lcTIw==", "message"=>{"title"=>"Any new Sublime albh", "description"=>"Tattooed artisan roof party actually live-edge skateboard next level copper mug meggings lyft narwhal. Unicorn activated charcoal pug, flannel chia street art schlitz coloring book vinyl trust fund raw denim everyday carry. Freegan semiotics skateboard, crucifix af chambray man braid glossier chia. Tofu selvage celiac, asymmetrical mustache edison bulb fixie air plant synth. Hoodie narwhal green juice pok pok tilde meh, pabst jean shorts skateboard etsy polaroid dreamcatcher tumblr. Wayfarers neutra YOLO craft beer sustainable salvia offal iPhone aesthetic. Selfies health goth pok pok, hashtag pinterest cold-pressed twee 3 wolf moon shabby chic jianbing vegan squid microdosing disrupt. 8-bit bitters quinoa four loko umami mlkshk brunch schlitz yuccie flannel. Mlkshk cliche vape, selfies offal literally adaptogen food truck lo-fi. Actually roof party church-key kombucha, 8-bit selvage squid before they sold out chartreuse bespoke gluten-free. Cliche sustainable keffiyeh bicycle rights. Pitchfork ramps letterpress tumblr, shaman cold-pressed poke vape tattooed man bun salvia. PBR&B everyday carry hoodie pickled. Chia hot chicken air plant, skateboard salvia kale chips small batch semiotics. Beard plaid live-edge next level cliche.\r\n\r\nIceland mumblecore VHS food truck sartorial knausgaard lo-fi freegan venmo man bun palo santo small batch lomo. Vinyl banh mi bitters pitchfork helvetica man braid vegan chia flannel kitsch hell of etsy cronut. Ugh blog kitsch XOXO pabst. Heirloom knausgaard letterpress, keffiyeh poutine bespoke bicycle rights tumeric migas ramps small batch jianbing. Raclette waistcoat VHS, shabby chic cornhole ethical schlitz truffaut air plant tumblr ramps DIY. Cold-pressed portland truffaut hella tumblr everyday carry taxidermy poutine irony man braid sustainable gentrify. Lyft keytar offal ethical cornhole tumblr paleo williamsburg echo park brunch enamel pin semiotics. Ennui godard cliche before they sold out palo santo. Sriracha williamsburg retro ugh vegan, vape banjo umami small batch. Poutine mumblecore adaptogen pinterest marfa intelligentsia. +1 hammock biodiesel mixtape. Slow-carb asymmetrical austin pabst meditation chia glossier normcore keytar. 8-bit live-edge tote bag woke crucifix butcher cronut coloring book edison bulb kale chips.\r\n\r\nShoreditch tumeric raw denim health goth readymade vape cardigan. La croix 90's cardigan meditation skateboard vaporware air plant marfa tattooed locavore kogi church-key raw denim photo booth. Hot chicken taxidermy swag narwhal salvia you probably haven't heard of them paleo, celiac trust fund banjo pabst. Food truck blog helvetica, salvia meh chia freegan. Beard tumeric bushwick portland, pitchfork chicharrones pour-over trust fund stumptown. Palo santo chartreuse fingerstache cred, tofu VHS whatever health goth woke wayfarers unicorn schlitz tousled mixtape. Tbh raclette photo booth, plaid kickstarter XOXO fam dreamcatcher authentic flexitarian. Viral ugh aesthetic edison bulb intelligentsia mustache post-ironic organic four dollar toast yr. Banjo seitan truffaut brunch keffiyeh before they sold out put a bird on it photo booth poke. Vexillologist tilde hashtag four dollar toast poke coloring book ennui jean shorts DIY shabby chic 3 wolf moon thundercats.\r\n\r\nFam raclette fixie truffaut church-key kale chips post-ironic affogato gluten-free banjo schlitz pinterest small batch brooklyn banh mi. Pop-up 8-bit iceland, pinterest chillwave meggings flexitarian sriracha celiac next level. Helvetica salvia trust fund gentrify gochujang, neutra selvage poutine hella succulents messenger bag brunch fanny pack. Taxidermy snackwave subway tile, keffiyeh bespoke vaporware marfa polaroid gastropub wolf before they sold out. PBR&B tacos adaptogen deep v selfies letterpress cloud bread poke distillery gentrify green juice narwhal. Edison bulb post-ironic quinoa tilde intelligentsia, franzen flannel direct trade squid prism etsy. Single-origin coffee tumblr thundercats, DIY waistcoat 3 wolf moon flannel ethical synth banh mi taxidermy PBR&B. 3 wolf moon letterpress hashtag pork belly church-key retro tousled photo booth. Schlitz fam williamsburg, tousled everyday carry green juice selvage taxidermy blog hella small batch dreamcatcher shabby chic post-ironic. Iceland humblebrag pickled readymade, viral master cleanse woke.\r\n\r\nSalvia selfies enamel pin, asymmetrical hammock fanny pack ugh pinterest lumbersexual. Vinyl man braid gluten-free tote bag iPhone raclette sriracha bitters taiyaki shaman. Literally post-ironic asymmetrical, air plant irony pitchfork lumbersexual intelligentsia blue bottle pug vice. Keffiyeh normcore pabst raclette etsy, edison bulb shoreditch tote bag man bun fanny pack selfies gluten-free echo park. Selvage plaid blog kinfolk umami biodiesel tattooed readymade yr viral PBR&B shaman. Marfa biodiesel locavore shoreditch lo-fi, try-hard crucifix etsy. Scenester austin succulents etsy. Literally iceland lumbersexual shoreditch marfa. Lumbersexual microdosing cliche trust fund jianbing. Leggings asymmetrical coloring book green juice. Hell of subway tile +1 copper mug knausgaard jianbing health goth craft beer cloud bread unicorn 3 wolf moon. Put a bird on it sustainable sartorial slow-carb godard air plant. Master cleanse unicorn jean shorts venmo. Everyday carry lo-fi brunch meditation marfa, gentrify 3 wolf moon bespoke art party franzen palo santo lyft leggings. Gastropub 3 wolf moon sustainable organic godard fashion axe."}, "commit"=>"Update Message", "id"=>"2"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[33mUPDATE "messages" SET "title" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["title", "Any new Sublime albh"], ["updated_at", "2017-07-25 03:01:12.499608"], ["id", 2]]
+  [1m[35m (266.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/messages/2
+Completed 302 Found in 320ms (ActiveRecord: 277.2ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 22:01:12 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 146ms (Views: 142.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 22:02:30 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 149ms (Views: 143.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 22:02:35 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 160ms (Views: 153.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:02:43 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 147ms (Views: 143.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 22:03:45 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 115ms (Views: 110.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:03:49 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 127ms (Views: 122.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages/2" for 127.0.0.1 at 2017-07-24 22:06:56 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 149ms (Views: 118.3ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/messages/2" for 127.0.0.1 at 2017-07-24 22:07:10 -0500
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MAPrIyphSm9d+vp4/ToYvxWsheLPEW5PHSJ/5+kGE5WzCWT4GdL0bnRfWGilFHmYk2CwLt2fG0/8nBc3SSyR5w==", "id"=>"2"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 2]]
+  [1m[35m (107.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 120ms (ActiveRecord: 110.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:07:10 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (1.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 159ms (Views: 154.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/messages/1" for 127.0.0.1 at 2017-07-24 22:07:19 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 143ms (Views: 138.8ms | ActiveRecord: 0.4ms)
+
+
