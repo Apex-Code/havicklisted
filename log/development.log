@@ -1416,3 +1416,97 @@ Processing by MessagesController#show as HTML
 Completed 200 OK in 185ms (Views: 180.0ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/messages/6" for 127.0.0.1 at 2017-07-24 23:42:22 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 6]]
+  Rendered collection of comments/_comment.html.erb [2 times] (2.5ms)
+  Rendered comments/_form.html.erb (11.1ms)
+  Rendered messages/show.html.erb within layouts/application (56.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 216.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 23:42:29 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 131.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 23:42:47 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 139.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/messages/6" for 127.0.0.1 at 2017-07-24 23:42:50 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 6]]
+  Rendered collection of comments/_comment.html.erb [2 times] (2.3ms)
+  Rendered comments/_form.html.erb (11.9ms)
+  Rendered messages/show.html.erb within layouts/application (36.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 199ms (Views: 192.8ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/messages/6/comments/1" for 127.0.0.1 at 2017-07-24 23:42:55 -0500
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"guyNmLGoZgOWEkqFSAFBYUtQyr0ybPUty5PFMQ/v5QE8kAv4oGaJLsV7M6Kn6f3OU9bXCIA/1g9dUd6gQXfOfw==", "message_id"=>"6", "id"=>"1"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."message_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["message_id", 6], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[35m (99.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/messages/6
+Completed 302 Found in 120ms (ActiveRecord: 107.0ms)
+
+
+Started GET "/messages/6" for 127.0.0.1 at 2017-07-24 23:42:56 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 6]]
+  Rendered collection of comments/_comment.html.erb [1 times] (2.9ms)
+  Rendered comments/_form.html.erb (24.7ms)
+  Rendered messages/show.html.erb within layouts/application (38.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 168ms (Views: 160.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/messages/6/comments/2" for 127.0.0.1 at 2017-07-24 23:42:58 -0500
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3eYHWbpPm2y+pS/8kqmRQgjT0MBES5PpB7EHMs1aUNVjmoE5q4F0Qe3MVtt9QS3tEFXNdfYYsMuRcxyjg8J7qw==", "message_id"=>"6", "id"=>"2"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."message_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["message_id", 6], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  [1m[35m (123.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/messages/6
+Completed 302 Found in 145ms (ActiveRecord: 130.5ms)
+
+
+Started GET "/messages/6" for 127.0.0.1 at 2017-07-24 23:42:58 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 6]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (10.2ms)
+  Rendered messages/show.html.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 175ms (Views: 168.7ms | ActiveRecord: 1.1ms)
+
+
