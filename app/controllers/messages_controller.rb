@@ -4,4 +4,10 @@ class MessagesController < ApplicationController
   	@messages = Message.all
   end
 
+  def new
+  	@message = Message.new
+  end
+
+  def create
+  end
 end
