@@ -34,7 +34,9 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+    @message.comments.clear
     @message.destroy
+  
     redirect_to root_path
   end
   
