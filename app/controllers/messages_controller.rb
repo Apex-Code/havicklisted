@@ -18,14 +18,17 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
-  end 
+  	find_message
+  end
 
-  
+
   private
 
   def message_params 
   	params.require(:message).permit(:title, :description)
   end
-
+  
+  def find_message
+  	@message = Message.find(params[:id])
+  end 
 end
