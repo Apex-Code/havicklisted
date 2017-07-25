@@ -1031,3 +1031,157 @@ Migrating to AddUserIdToMessages (20170725033521)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-24 22:52:22 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 241ms (Views: 183.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-24 22:52:32 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bm2TJBDjrWtu0DOxDkJ0u+L6Js1vn+23utajT8DVy3lgivAGTPEQkIUU5OdCcZIu6pRcJGym2niQl8nAnr6KIQ==", "user"=>{"email"=>"havick@havick.tech", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "havick@havick.tech"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-25 03:52:32.971986"], ["sign_in_count", 2], ["updated_at", "2017-07-25 03:52:32.974489"], ["id", 2]]
+  [1m[35m (85.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 378ms (ActiveRecord: 90.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:52:33 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (30.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 159.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/messages/4" for 127.0.0.1 at 2017-07-24 22:52:35 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 129.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2017-07-24 22:52:38 -0500
+Processing by MessagesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (12.7ms)
+  Rendered messages/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 276ms (Views: 189.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2017-07-24 22:52:53 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"afgi59B/GUSmzpXp0o8rwAGxJ8Ekt4dw3RXkjnWOnBN+XnDyFok3wk8VDSC47BU4BQnpXuZNAtORNTNZxn/FqQ==", "message"=>{"title"=>"this is a test", "description"=>"just running through the process again\r\n"}, "commit"=>"Create Message"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO "messages" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "this is a test"], ["description", "just running through the process again\r\n"], ["created_at", "2017-07-25 03:52:53.348431"], ["updated_at", "2017-07-25 03:52:53.348431"], ["user_id", 2]]
+  [1m[35m (250.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 286ms (ActiveRecord: 265.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:52:53 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 134ms (Views: 129.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/messages/5" for 127.0.0.1 at 2017-07-24 22:54:17 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 175ms (Views: 169.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/messages/5" for 127.0.0.1 at 2017-07-24 22:54:20 -0500
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jgvY52OSzLlkjY7SjT7pDHMxSWLjLwUtfBWj/q4r/y12AnuUyRyByRy33IiURCwFxoxNc95lm4CfngwzZMmVUQ==", "id"=>"5"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 5]]
+  [1m[35m (102.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms (ActiveRecord: 106.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:54:20 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 176ms (Views: 171.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/messages/4" for 127.0.0.1 at 2017-07-24 22:54:21 -0500
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 190ms (Views: 180.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/messages/4" for 127.0.0.1 at 2017-07-24 22:54:24 -0500
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fVHjODD0f98pLCj72Ur2LMQsR7qWsHOjMAPnoazTuaGFWEBLmnoyr1EWeqHAMDMlcZFDq6v67Q7TiEhsZjHT3Q==", "id"=>"4"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 4]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 88.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:54:24 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 220.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-24 22:54:27 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mo5HqiMBLUlC1ZC8035Dld7S08H+QknqUbBOen6G5YBih+TZiY9gOTrvwubKBIaca2/X0MMI10eyO+G3tGSP/A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:54:27 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 114ms (Views: 108.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 22:54:29 -0500
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY created_at DESC[0m
+  Rendered messages/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 122ms (Views: 119.1ms | ActiveRecord: 0.4ms)
+
+
