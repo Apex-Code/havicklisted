@@ -21,8 +21,16 @@ class MessagesController < ApplicationController
 
   def show
   end
+  
+  def edit
+  end
 
+  def update
+  end
 
+  def destroy
+  end
+  
   private
 
   def message_params 
