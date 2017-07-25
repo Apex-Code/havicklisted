@@ -1,6 +1,11 @@
 <h1><%= @message.title %></h1>
 
-<h2><%= @message.description%></h2>
+<h2><%= @message.description%></h2><br>
+
+<h2>Comments:</h2><br>
+<%= render @message.comments %>
+<h3>Leave a comment for this message</h3>
+<%= render "comments/form"%>
 
 <!-- add created by and time here! -->
 <h3><%= link_to "Edit", edit_message_path(@message) %> | <%= link_to "Back", root_path %> | <%= link_to "Delete", message_path(@message), method: :delete, data: {confirm: "You won't come back from this, are you sure?"} %></h3>
